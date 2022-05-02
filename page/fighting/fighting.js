@@ -1,7 +1,7 @@
 let button = document.getElementById("post");
 let page = 1;
 let number = 0;
-var main = document.getElementsByClassName('contentArea');
+var main = document.getElementById('content-Area');
 var text = document.getElementsByTagName('input');
 let postButton = document.getElementsByTagName('button');
 
@@ -67,7 +67,7 @@ let showContent = function() {
                 fragment.appendChild(record);
             }
 
-            main[0].appendChild(fragment)
+            main.appendChild(fragment)
         }
     }
 }
@@ -150,11 +150,12 @@ function getWindowHeight(){
     }
 };
 
-// let splitTime = function(timeString) {
-//     date = timeString.split('T');
-//     hour = data[1].split(".");
-//     return date[0] + hour[0];
-// }
+let splitTime = function(timeString) {
+    date = timeString.split('T');
+    hour = date[1].split(":");
+    return date[0] + " " + hour[0] + ":" + hour[1];
+}
 
+splitTime('2022-05-02T09:53:48.487+08:00');
 showContent();
 postButton[0].addEventListener("click", postRecord);
