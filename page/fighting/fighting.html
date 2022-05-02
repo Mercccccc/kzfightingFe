@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>康中加油</title>
-        <meta charset="utf-8">
-        <link href="fighting.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <div class="navbar">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>想说的话</title>
+    <link href="styles/fighting.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="navbar">
         <p class="home">Fighting</p>
         </div>
         
@@ -29,20 +31,24 @@
                 </div>
                 
                 <div id="postArea">
-                    <div>
-                        <p>To:</p>
-                        <input id="postReceiver">
+                    <div id="postReceiver">
+                        To: <input>
                     </div>
                     
-                    <input id="postTxt">
-                    <button id="postButton">post</button>
+                    <textarea id="postTxt" placeholder="请输入你的评论"></textarea>
+                    <div id"button">
+                        <button id="postButton">post</button>
+                    </div>
                 </div>
             </div>
         </div>
     
+        <div style="margin: 60px;"></div><!--避免底部内容与评论区重合-->
+
         <div class="footer">
-        <h2>底部内容</h2>
+            底部内容
         </div>
-    </body>
-    <script type="text/javascript" src="fighting.js"></script>
+
+        <script type="text/javascript" src="scripts/fighting.js"></script>
+</body>
 </html>
