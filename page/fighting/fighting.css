@@ -180,8 +180,9 @@ body {
     .row {   
         flex-direction: column;
     }
-    .main {
-        padding: 20px;
+    #main {
+        padding: 0 20px;
+        margin: 10px;
     }
     #postButton{
         width: 100px;

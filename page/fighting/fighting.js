@@ -3,7 +3,8 @@ let page = 1;
 let number = 0;
 var main = document.getElementById('content-Area');
 var text = document.getElementsByTagName('input');
-let postButton = document.getElementsByTagName('button');
+var comment = document.getElementsByTagName("textarea");
+let postButton = document.getElementById('postButton');
 var load = document.getElementById('load');
 var loadP = document.getElementById('loading');
 
@@ -14,7 +15,7 @@ function Record(Receiver, Content, Time) {
 
 let getNumber = function() {
     let xhr = new XMLHttpRequest();
-    xhr.open('get', 'http://localhost:678/records/number');
+    xhr.open('get', 'http://39.106.3.178:678/records/number');
     xhr.send();
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4 && xhr.status == 200) {
@@ -31,15 +32,15 @@ var removeload = function() {
 
 let showContent = function() {
     let xhr = new XMLHttpRequest();
-    let url = 'http://localhost:678/records?page=' + page.toString();
+    let url = 'http://39.106.3.178:678/records?page=' + page.toString();
     xhr.open('get', url);
     xhr.send();
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4 && xhr.status == 200) {
             var jsobj = JSON.parse(xhr.responseText)
             if(jsobj.data.records.length === 0) {
-                load.removeChild(loadP);
                 page = page - 1;
+                load.removeChild(loadP);
                 return;
             }
             let receivers = new Array();
@@ -99,17 +100,16 @@ var addNewContent = function(Record) {
 
 var postRecord = function() {
     var receiver = text[0].value;
-    var content = text[1].value;
+    var content = comment[0].value;
     if(content.length > 0 && receiver.length > 0){
         var record = new Record(receiver, content);
         var xhr = new XMLHttpRequest();
-        var url = 'http://localhost:678/record'
+        var url = 'http://39.106.3.178:678/record'
         xhr.open('post', url, true);
         xhr.setRequestHeader('content-type', 'application/json');
         xhr.send(JSON.stringify(record));
         if (xhr.readyState === 4 && xhr.status === 200) {
-            alert('success');
-            addNewContent(record);
+            postButton.innerText = "success";
         }
     } else {
         alert('please input something!');
@@ -168,7 +168,6 @@ let splitTime = function(timeString) {
     return date[0] + " " + hour[0] + ":" + hour[1];
 }
 
-splitTime('2022-05-02T09:53:48.487+08:00');
 showContent();
 load.addEventListener("click", loading);
-postButton[0].addEventListener("click", postRecord);
+postButton.addEventListener("click", postRecord);
