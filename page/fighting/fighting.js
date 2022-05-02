@@ -4,6 +4,8 @@ let number = 0;
 var main = document.getElementById('content-Area');
 var text = document.getElementsByTagName('input');
 let postButton = document.getElementsByTagName('button');
+var load = document.getElementById('load');
+var loadP = document.getElementById('loading');
 
 function Record(Receiver, Content, Time) {
     this.Receiver = Receiver;
@@ -23,6 +25,10 @@ let getNumber = function() {
     }
 }
 
+var removeload = function() {
+    
+}
+
 let showContent = function() {
     let xhr = new XMLHttpRequest();
     let url = 'http://localhost:678/records?page=' + page.toString();
@@ -32,7 +38,8 @@ let showContent = function() {
         if(xhr.readyState == 4 && xhr.status == 200) {
             var jsobj = JSON.parse(xhr.responseText)
             if(jsobj.data.records.length === 0) {
-                alert("No Records");
+                load.removeChild(loadP);
+                page = page - 1;
                 return;
             }
             let receivers = new Array();
@@ -109,46 +116,51 @@ var postRecord = function() {
     }
 }
 
-function getScrollTop(){
-    var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
-    if(document.body){
-        bodyScrollTop = document.body.scrollTop;
-    }
-    if(document.documentElement){
-        documentScrollTop = document.documentElement.scrollTop;
-    }
-        scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
-        return scrollTop;
-    }
+// function getScrollTop(){
+//     var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+//     if(document.body){
+//         bodyScrollTop = document.body.scrollTop;
+//     }
+//     if(document.documentElement){
+//         documentScrollTop = document.documentElement.scrollTop;
+//     }
+//         scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+//         return scrollTop;
+//     }
 
-function getScrollHeight(){
-    var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
-    if(document.body){
-        bodyScrollHeight = document.body.scrollHeight;
-    }
-    if(document.documentElement){
-        documentScrollHeight = document.documentElement.scrollHeight;
-    }
-    scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
-    return scrollHeight;
-}
+// function getScrollHeight(){
+//     var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+//     if(document.body){
+//         bodyScrollHeight = document.body.scrollHeight;
+//     }
+//     if(document.documentElement){
+//         documentScrollHeight = document.documentElement.scrollHeight;
+//     }
+//     scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+//     return scrollHeight;
+// }
 
-function getWindowHeight(){
-    var windowHeight = 0;
-    if(document.compatMode == "CSS1Compat"){
-        windowHeight = document.documentElement.clientHeight;
-    }else{
-        windowHeight = document.body.clientHeight;
-    }
-        return windowHeight;
-    }
+// function getWindowHeight(){
+//     var windowHeight = 0;
+//     if(document.compatMode == "CSS1Compat"){
+//         windowHeight = document.documentElement.clientHeight;
+//     }else{
+//         windowHeight = document.body.clientHeight;
+//     }
+//         return windowHeight;
+//     }
      
-    window.onscroll = function(){
-    if(getScrollTop() + getWindowHeight() == getScrollHeight()){
-        page = page + 1;
-        showContent();
-    }
-};
+//     window.onscroll = function(){
+//     if(getScrollTop() + getWindowHeight() == getScrollHeight()){
+//         page = page + 1;
+//         showContent();
+//     }
+// };
+
+var loading = function() {
+    page = page + 1;
+    showContent();
+}
 
 let splitTime = function(timeString) {
     date = timeString.split('T');
@@ -158,4 +170,5 @@ let splitTime = function(timeString) {
 
 splitTime('2022-05-02T09:53:48.487+08:00');
 showContent();
+load.addEventListener("click", loading);
 postButton[0].addEventListener("click", postRecord);
