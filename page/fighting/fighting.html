@@ -3,13 +3,7 @@
     <head>
         <title>康中加油</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-        <link rel="stylesheet" href="../css/cirrus.min.css">
         <link href="fighting.css" rel="stylesheet" type="text/css">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <div class="navbar">
@@ -17,28 +11,30 @@
         </div>
         
         <div class="row">
-            <div class="main">
-                <div class="content">
-                    <div class="content-info">
-                    <h2>To</h2>
-                    <h5>林雪鹏</h5>
-                    </div>
-                    <div class="fakeimg" style="height:200px;">图像</div>
-                    <p>一些文本..</p>
+            <div id="main">
+                <div class="contentArea">
+                    <div class="content">
+                        <div class="content-info">
+                        <h2>To</h2>
+                        <h5>林雪鹏</h5>
+                        </div>
+                        <div class="fakeimg" style="height:200px;">图像</div>
+                        <p>一些文本..</p>
+                        <p id="time">time</p>
+                    </div>   
                 </div>
                 
-                <br>
-                <h2>标题</h2>
-                <h5>副标题</h5>
-                <div class="fakeimg" style="height:200px;">图像</div>
-                <p>一些文本..</p>
-                <p>菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！</p>
+                <div id="postArea">
+                    <div>
+                        <p>To:</p>
+                        <input id="postReceiver">
+                    </div>
+                    
+                    <input id="postTxt">
+                    <button id="postButton">post</button>
+                </div>
             </div>
         </div>
-
-        <button id="post">
-            test
-        </button>
     
         <div class="footer">
         <h2>底部内容</h2>
