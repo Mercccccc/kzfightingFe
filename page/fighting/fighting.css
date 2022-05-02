@@ -119,6 +119,11 @@ body {
     border: 2px solid #8AC007;
 }
 
+#load{
+    display: flex;
+    justify-content: center;
+}
+
 .content p {
     padding: 5px;
 }
@@ -127,6 +132,18 @@ body {
     position: fixed;
     bottom: 5%;
     right: 5%;
+}
+
+#postArea{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#postArea p {
+    margin: 0;
+    padding: 0;
+    width: 25px;
 }
  
 /* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
