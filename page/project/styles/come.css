@@ -1,0 +1,255 @@
+@font-face {
+    font-family :myFont;
+    src: url('/wordStyles/ZiTiGuanJiaRunXing/ZiTiGuanJiaRunXing-2.ttf') format('truetype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family :myFont;
+}
+
+.shell{
+    height: 100vh;
+    overflow-x: hidden;
+    perspective: 3px;
+}
+
+.shell div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*font-size: 30px;*/
+    letter-spacing: 2px;
+}
+
+
+.image{
+    transform: translateZ(-1px) scale(1.4);
+    background-size: cover;
+    height: 100vh;
+    z-index: -1;
+}
+
+.text{
+    font-family :myFont;
+    text-align: center;
+    font-size: 30px;
+    height: 50vh;
+    background-color: white;
+}
+
+.heading{
+    font-family :myFont;
+    z-index: -1;
+    transform: translateY(-50vh) translateZ(1px);
+    color: white;
+    font-size: 30px;
+}
+
+/*菜单栏*/
+
+.menu-toggler{
+    position: absolute;
+    display: block;
+    /*top: 0;*/
+    bottom: 150px;
+    /*right: 0;*/
+    left: 49%;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    position: fixed;
+}
+
+.menu-toggler:hover + label,
+.menu-toggler:hover + label::before,
+.menu-toggler:hover + label::after{
+    /*background-color: white;*/
+}
+
+.menu-toggler:checked + label{
+    background-color: transparent;
+}
+
+.menu-toggler:checked + label::before,
+.menu-toggler:checked + label::after{
+    top: 0;
+    width: 40px;
+    transform-origin: 50% 50%;
+}
+
+.menu-toggler:checked + label::before{
+    transform: rotate(45deg);
+}
+
+.menu-toggler:checked + label::after{
+    transform: rotate(-45deg);
+}
+
+.menu-toggler:checked ~ ul .menu-item{
+    opacity: 1;
+}
+
+.menu-toggler:checked ~ ul .menu-item:nth-child(1){
+    transform: rotate(0deg) translateX(-110px);
+}
+
+.menu-toggler:checked ~ ul .menu-item:nth-child(2){
+    transform: rotate(90deg) translateX(-110px);
+}
+
+.menu-toggler:checked ~ ul .menu-item:nth-child(3){
+    transform: rotate(180deg) translateX(-110px);
+}
+
+.menu-toggler:checked ~ ul .menu-item:nth-child(4){
+    transform: rotate(270deg) translateX(-110px);
+}
+
+.menu-toggler:checked ~ ul .menu-toggler a{
+    pointer-events: auto;
+}
+
+.menu-toggler + label{
+    width: 40px;
+    height: 5px;/*                 */
+    display: block;
+    z-index: 1;
+    border-radius: 2.5px;
+    background: black;
+    transition: transform 0.5s,top 0.5s;
+    position: absolute;
+    position: 50% 50%;
+   /*top: 0;*/
+   bottom: 150px;
+   /*right: 0;*/
+   left: 49%;
+    margin: auto;
+    position: fixed;
+}
+
+.menu-toggler + label::before,
+.menu-toggler + label::after{
+    width: 41px;
+    height: 5px;/*             */
+    display: block;
+    z-index: 1;
+    border-radius: 2.5px;/*            */
+    background: black;
+    transition: transform 0.5s,top 0.5s;
+    content: "";
+    position: absolute;
+}
+
+.menu-toggler + label::before{
+    top: 10px;
+}
+
+.menu-toggler + label::after{
+    top: -10px;
+}
+
+.menu-item:nth-child(1) a i{
+    transform: rotate(0deg);
+}
+
+.menu-item:nth-child(2) a i{
+    transform: rotate(-90deg);
+}
+
+.menu-item:nth-child(3) a i{
+    transform: rotate(-180deg);
+}
+
+.menu-item:nth-child(4) a i{
+    transform: rotate(-270deg);
+}
+
+.menu-item{
+    position: absolute;
+    display: block;
+    position: 50% 50%;
+    /*top: 0;*/
+    bottom: 110px;
+    /*right: 0;*/
+    left: 48%;
+    margin: auto;
+    height: 80px;
+    width: 80px;
+    opacity: 0;
+    transition: all 0.5s;
+    position: fixed;
+}
+
+.menu-item a {
+    text-decoration: none;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+}
+.menu-item a i{
+    display: block;
+    width: inherit;
+    height: inherit;
+    line-height: 80px;
+    color: white;
+    background: black;
+    border-radius: 50%;
+    font-size: 40px;
+    pointer-events: none;
+    transition: 0.5s;/*        */
+}
+
+.menu-item a:hover i{
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    color: black;
+    background: white;
+    font-size: 44.44px;
+}
+
+.menu-item .active i{
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    color: black;
+    background: white;
+}
+
+@media screen and (max-width: 700px){
+    .image{
+        height: 270px;
+    }
+
+    .image:nth-child(1){
+
+        height: 300px;
+    }
+
+    .text{
+        font-size: 10px;
+        height: 270px;
+    }
+
+    .heading{
+        font-size: 10px;
+        transform: translateY(-8vh);
+    }
+    /*                        */
+    .menu-item{
+        left: 42%;
+    }
+
+    .menu-toggler{
+        left: 46%;
+    }
+
+    .menu-toggler + label{
+        left: 46%;
+    }
+}

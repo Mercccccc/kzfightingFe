@@ -1,0 +1,159 @@
+
+html,
+body{
+    margin: 0;
+    padding: 0;
+    height: 200vh;
+    overflow-x: hidden;
+}
+
+.icon-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    position: fixed;
+    width: 100vw;
+    /*height: 100%;*/
+    overflow:hidden;
+}
+
+.icon-bar li{
+    display:inline;
+    float: right;
+    width: 180px;
+}
+
+.icon-bar li img{
+    width: 110px;
+}
+
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.5s ease; 
+}
+
+.icon-bar a,
+.icon-bar a i{
+    font-size: 25px;
+}
+
+.icon-bar a:hover {
+    background-color: white; /* 添加鼠标移动到元素上的背景颜色 */
+    color: black;
+}
+
+.icon-bar a.active{
+    background-color: white;
+    color: black;
+}
+
+span{
+    font-family :'xingshu';
+    /* position: relative;
+    top: 200px; */
+}
+
+.background{
+    background-image: url(/images/4.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 100vw;
+    height: 200vh;
+    font:900 15rem '';
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*position: relative;*/
+    text-align: center;
+    line-height: 600px;
+    overflow: hidden;
+}
+
+.background::before{
+    content: '';
+    background-size: cover;
+    background-image: inherit;
+    position: absolute;
+    background-position: 50% 50%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 200vh;
+    z-index: -99;
+}
+
+h1{
+    position: absolute;
+    text-align: center;
+    transform: translateY(10vh);
+    width: 100%;
+    letter-spacing: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+h2{
+    position: absolute;
+    letter-spacing: 2px;
+    top:130vh;
+    color: white;
+    left: 50%;
+    font-size: 30px;
+    transform: translateX(-50%);
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+/*------------------------------------------*/
+@font-face {
+    font-family :xingshu;
+    src: url("/wordStyles/ZiTiGuanJiaRunXing/ZiTiGuanJiaRunXing-2.ttf");
+}
+
+@media screen and (max-width: 700px){
+    h1{
+        transform: translateY(40vh);
+        font-size: 20px;
+    }
+
+    h2{
+        width: 73vw;
+        top:140vh;
+        font-size: 15px;
+    }
+
+    .background{
+        font-size: 100px;
+        line-height: 400px;
+    }
+
+    ul.icon-bar li {
+        width: 100vw;
+        float: none;
+        text-align: center;
+    }
+
+    ul.icon-bar li a,
+    ul.icon-bar li a i{
+        font-size: 20px;
+    }
+
+    ul.icon-bar{
+        height: 200%;
+    }
+
+    .icon-bar li img{
+        width: 70px;
+    }
+
+    ul.icon-bar li .logo{
+        float: top;
+        
+    }
+}
