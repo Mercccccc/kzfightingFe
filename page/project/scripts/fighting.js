@@ -108,11 +108,14 @@ var postRecord = function() {
         xhr.open('post', url, true);
         xhr.setRequestHeader('content-type', 'application/json');
         xhr.send(JSON.stringify(record));
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            postButton.innerText = "success";
+        xhr.onload = function() {
+            addNewContent(record);
+            alert("发布成功");
+            text[0].value = " ";
+            comment[0].value = " ";
         }
     } else {
-        alert('please input something!');
+        alert("please input something");
     }
 }
 
