@@ -61,15 +61,15 @@ span{
 }
 
 .background{
-    background-image: url(/images/4.jpg);
+    background-image: url(../images/4.jpg);
     background-size: cover;
     background-position: 50% 50%;
     width: 100vw;
     height: 200vh;
     font:900 15rem '';
+   
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    /*position: relative;*/
     text-align: center;
     line-height: 600px;
     overflow: hidden;

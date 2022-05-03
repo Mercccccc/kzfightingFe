@@ -354,8 +354,8 @@ body {
     .row {   
         flex-direction: column;
     }
-    .main {
-        padding: 20px;
+    #main {
+        padding: 50px;
     }
     #postButton{
         width: 100px;
