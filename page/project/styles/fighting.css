@@ -199,7 +199,7 @@ body {
 .menu-toggler:hover + label,
 .menu-toggler:hover + label::before,
 .menu-toggler:hover + label::after{
-    /*background-color: white;*/
+    background-color: white;
 }
 
 .menu-toggler:checked + label{
