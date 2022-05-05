@@ -1,0 +1,343 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    
+    overflow-x: hidden;
+}
+
+.wrap{
+    width: 100%;
+    background: url(../images/c7.jpg) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.logo{
+    margin: 0;
+}
+
+.logo img{
+    display: block;
+    width: 120px;
+    position: fixed;
+}
+
+.icon-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    position: fixed;
+    width: 100vw;
+    overflow:hidden;
+}
+
+.icon-bar li{
+    display:inline;
+    float: right;
+    width: 200px;
+}
+
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.5s ease; 
+}
+
+.icon-bar a,
+.icon-bar a i{
+    font-size: 25px;
+}
+
+.icon-bar a:hover {
+    /*background-color: white;*/
+    background-color: yellowgreen;
+    color: black;
+}
+
+.icon-bar a.active{
+    background-color: yellowgreen;
+    /*background-color: white;*/
+    color: black;
+}
+
+.banner{
+    width: 60%;
+    height: 100vh;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.description,
+.fighting{
+    align-self: flex-end;
+}
+
+.description .line{
+    width: 100px;
+    height: 6px;
+    /*background: rgb(13, 4, 133);*/
+    background: yellowgreen;
+}
+
+.description p{
+    font-size: 25px;
+    font-weight: 200;
+    padding-top: 20px;
+    color: #fff;
+}
+
+h1{
+    transform: translateY(-10vh);
+    letter-spacing: 10px;
+    color: white;
+    font-size: 100px;
+    font-family: xingshu;
+    /*animation: move 3s ease-in-out  infinite;*/
+}
+
+.content{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: #fff center;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+} 
+/*------------------------------------------*/
+@font-face {
+    font-family :xingshu;
+    src:url("/wordStyles/ZiTiGuanJiaRunXing/ZiTiGuanJiaRunXing-2.ttf");
+}
+
+@media screen and (max-width: 1500px){
+    h1{
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 1350px){
+    h1{
+        font-size: 70px;
+    }
+    
+    .icon-bar a:hover {
+        /*background-color: white;*/
+        background-color: transparent;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .description p{
+        font-size: 20px;
+    }
+
+    h1{
+        font-size: 55px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .icon-bar a,
+    .icon-bar a i{
+        font-size: 20px;
+    }
+
+    .icon-bar li{
+        width: 161px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .logo img{
+        width: 80px;
+    }
+
+    .banner{
+        display: flex;
+    }
+
+    .description{
+        position: relative;
+        top: -30%;
+        writing-mode: vertical-rl;
+    }
+
+    .description .line{
+        position: relative;
+        width: 6px;
+        height: 100px;
+        /*writing-mode: vertical-rl;*/
+    }
+
+    .description p{
+        position: relative;
+        font-size: 20px;
+        writing-mode: vertical-rl;
+    }
+
+    h1{
+        position: relative;
+        font-size: 65px;
+        writing-mode: vertical-rl;
+        right: -145%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    *{
+        box-sizing: content-box;
+    }
+
+    .menu{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    ul.icon-bar li {
+        float: none;
+        text-align: center;
+        margin:0 auto;
+    }
+
+    ul.icon-bar li a,
+    ul.icon-bar li a i{
+        font-size: 20px;
+    }
+
+    ul.icon-bar{
+        width: 50vw;
+        margin:0 auto;
+       
+    }
+
+    .logo img{
+        width: 80px;
+    }
+
+    .banner{
+        display: flex;
+    }
+
+    .description{
+        position: relative;
+        top: -30%;
+        writing-mode: vertical-rl;
+    }
+
+    .description .line{
+        position: relative;
+        width: 6px;
+        height: 100px;
+        /*writing-mode: vertical-rl;*/
+    }
+
+    .description p{
+        position: relative;
+        font-size: 20px;
+        writing-mode: vertical-rl;
+    }
+    h1{
+        position: relative;
+        font-size: 55px;
+        writing-mode: vertical-rl;
+        right: -150%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .description{
+        position: relative;
+        top: -30%;
+        writing-mode: vertical-rl;
+    }
+
+    .description .line{
+        position: relative;
+        width: 6px;
+        height: 100px;
+        /*writing-mode: vertical-rl;*/
+    }
+
+    .description p{
+        position: relative;
+        font-size: 20px;
+        writing-mode: vertical-rl;
+    }
+    h1{
+        position: relative;
+        font-size: 50px;
+        writing-mode: vertical-rl;
+        right: -135%;
+    }
+}
+
+@media screen and (max-width: 460px){
+    .description{
+        position: relative;
+        top: -30%;
+        writing-mode: vertical-rl;
+    }
+
+    .description .line{
+        position: relative;
+        width: 6px;
+        height: 100px;
+        /*writing-mode: vertical-rl;*/
+    }
+
+    .description p{
+        position: relative;
+        font-size: 15px;
+        writing-mode: vertical-rl;
+    }
+    h1{
+        position: relative;
+        font-size: 40px;
+        writing-mode: vertical-rl;
+        right: -125%;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .description{
+        position: relative;
+        top: -30%;
+        writing-mode: vertical-rl;
+    }
+
+    .description .line{
+        position: relative;
+        width: 6px;
+        height: 100px;
+        /*writing-mode: vertical-rl;*/
+    }
+
+    .description p{
+        position: relative;
+        font-size: 15px;
+        writing-mode: vertical-rl;
+    }
+
+    h1{
+        position: relative;
+        font-size: 40px;
+        writing-mode: vertical-rl;
+        right: -115%;
+    }
+}
