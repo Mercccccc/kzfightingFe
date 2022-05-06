@@ -103,9 +103,7 @@ body {
 .footer {
     width: 100vw;
     height: 50px;
-    position: absolute;
     bottom: 0;
-    position: fixed;
     padding: 0px;
     text-align: center;
     justify-content: center;
