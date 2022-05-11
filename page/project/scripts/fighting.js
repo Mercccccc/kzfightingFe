@@ -101,7 +101,7 @@ var addNewContent = function(Record) {
 var postRecord = function() {
     var receiver = text[0].value;
     var content = comment[0].value;
-    if(content.length > 0 && receiver.length > 0){
+    if(content.length > 0 && receiver.length > 0 && content != " " && receiver != " "){
         var record = new Record(receiver, content);
         var xhr = new XMLHttpRequest();
         var url = 'http://39.106.3.178:678/record'

@@ -101,7 +101,7 @@ body{
 
 h1{
     transform: translateY(-10vh);
-    letter-spacing: 10px;
+    /* letter-spacing: 10px; */
     color: white;
     font-size: 100px;
     font-family: xingshu;
